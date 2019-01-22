@@ -37,8 +37,11 @@ int main()
     //Height = [(G M T^2)/(4PI^2)]^1/3 - R
 
     Height = GRAVITY * E_MASS * pow(PeriodT, 2); 
-    Height = Height / 4 * pow(PI, 2);
-    Height = pow(Heigh, 1/3);
+    Height = Height / 4 * pow(PI, 2.0);
+//    Height = pow(Height, 1.0/3.0);
+    Height = cbrt(Height);
+    
+    
     Height = Height - E_RADIUS;
 
     printf("For the period %1.2lf the height is %1.4lf\n", PeriodT, Height);
