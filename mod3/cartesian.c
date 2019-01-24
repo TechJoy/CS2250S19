@@ -28,18 +28,23 @@ int main()
 {
     double radius = 0.0;
     double angle = 0.0;
+    double xCord;
+    double yCord;
   //  double angleRadians = 0.0;
     
     //1) Capture user input for radis adn theata(dgrees)
-    printf("Enter radius in meters");
+    printf("Enter radius in meters: ");
     scanf("%lf", &radius);
-    printf("Enter angle in degrees");
+    printf("Enter angle in degrees: ");
     scanf("%lf", &angle);
     //2) Convert theta angle to radians
     angle = angle * (PI / 180.0);
     //3) Calculate your cartesian coordinates
+    xCord = cos(angle) * radius;
+    yCord = sin(angle) * radius;
     //4) Print the :result
 
+    printf("Your cartesian coordinates, are (%-6.2lf, %-6.2lf)\n", xCord, yCord);
 
 
     return 0;
