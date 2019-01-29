@@ -20,16 +20,23 @@
 // Main Function
 int main()
 {
-    int value;
+    int value1 = 0;
+    int value2 = 0;
 
-    printf("Enter if a interger value: ");
-    scanf("%d", &value);
+    printf("Enter both an even number and odd number seperated by a spacee: ");
+    scanf("%d %d", &value1, &value2);
 
-    if(value % 2){
-        printf("Value is odd");
+    if(value1 % 2 != value2 % 2){
+        printf("Good job you can follow basic instructions\n");
     } else {
-        printf("Value is even");
+        printf("Learn to read and Obey!\n");
     }
+
+//    if(value % 2){
+ //       printf("The value [%d] is odd\n", value);
+ //   } else {
+  //      printf("The value [%d] is even\n", value);
+ //   }
 
     return 0;
 }
