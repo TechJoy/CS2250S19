@@ -24,10 +24,13 @@
 // Main Function
 int main(){
 
+    int tables[TABLE][TABLE];
+
 
     for(int y = 1; y < (TABLE + 1); y++){
      for(int x = 1; x < TABLE + 1; x++){
         printf("%4d", x*y);
+
      }
      printf("\n");
     }
