@@ -22,7 +22,7 @@
 
 // Function Prototypes
 void UpdatePostion(double* x, double* y, double new_x, double new_y);
-void DisplayPostion(double x, double y);
+void DisplayPostion(const double* x, const double* y);
 void ResetPostion(double*x, double *y);
 // Main Function
 int main(int argc, char* argv[])
@@ -33,15 +33,15 @@ int main(int argc, char* argv[])
     UpdatePostion(&x, &y, atof(argv[1]), atof(argv[2]));
 
 
-    DisplayPostion(x, y);
+    DisplayPostion(&x, &y);
 
     return 0;
 }
 // Function Definitions
 
-void DisplayPostion(double x, double y){
+void DisplayPostion(const double* x, const double* y){
 
-    printf("Your current positon is (%6.2lf, %6.2lf)\n",x,y);
+    printf("Your current positon is (%6.2lf, %6.2lf)\n",*x, *y);
 }
 
 void ResetPostion(double* x, double* y){
