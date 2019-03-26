@@ -18,7 +18,8 @@
 #include <stdio.h>
 
 // Constants
-
+#define START_YEAR 2000
+#define END_YEAR 2020
 // Function Prototypes
 
 int IsLeap(int year);
@@ -27,31 +28,33 @@ int IsLeap(int year);
 int main(int argc, char* argv[])
 {
     int isLeap = 0;
-    for(int i = 2000; i < 2017; i++){
+
+    // loop to test function IsLeap
+    for(int i = START_YEAR; i < END_YEAR; i++){
         isLeap = IsLeap(i);
-        if(isLeap == 0)
-            printf("%d is not a Leap Year", i);
-        else 
-            printf("%d is a leap year", i);
-    
+        if(isLeap == 1)
+            printf("%d is a leap year\n", i);
     }
     return 0;
 }
 // Function Definitions
 
-int IsLeap(int year){
 
+// Function: IsLeap
+// Description: Determine if its a leap year
+// Param: int year - year in questino
+// Output 1 if true 0 if false
+int IsLeap(int year){
 
     if(year % 4 == 0) {
         if(year % 100 == 0){
             if(year % 400 == 0){
-                return 0;
+                return 1;  //If divisable by 400 a leap year
             }  //year % 400
-            return 1;
+            return 0;  //divisable by 100 but not 400 not a leap year
         } //year % 100
-        return 1;
+        return 1;  //If divisable by 4 but not 400 its a leap year
     } //year % 4
     return 0;
-
 }
 
